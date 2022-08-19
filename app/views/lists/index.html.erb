@@ -1,0 +1,24 @@
+<div class="cover">
+  <div>
+    <h1>My movies' lists</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div>
+    <h3> My lists</h3>
+    <%= link_to "Create a new list", new_list_path(@list), class: "btn btn-primary" %>
+  </div>
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="co-12 col-sm-6 col-md-4 mb-3">
+        <%= link_to list_path(list), class:"text-decoration-none" do %>
+          <div class="card-category" data-aos="zoom-in">
+            <%= list.name %>
+          </div>
+        <% end %>
+      </div>
+    <% end%>
+  </div>
+
+</div>
